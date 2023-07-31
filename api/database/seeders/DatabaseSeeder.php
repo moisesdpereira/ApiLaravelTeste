@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\City;
+use App\Models\Doctor;
+use App\Models\DoctorPatient;
+use App\Models\Patient;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        City::factory(10)->create();
+
+        Patient::factory(10)->create();
+
+        Doctor::factory(10)->create();
+
+        DoctorPatient::factory(10)->create();
     }
 }
