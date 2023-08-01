@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "b776b6f5-132d-4c47-9ecb-518aee4a3340",
+		"name": "Pacientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24761159-b776b6f5-132d-4c47-9ecb-518aee4a3340"
+	},
+	"item": [
+		{
+			"name": "localhost/api/pacientes",
+			"id": "28f9002f-23db-428e-b231-57eefe622a2d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjkwOTMwNzkyLCJleHAiOjE2OTA5MzQzOTIsIm5iZiI6MTY5MDkzMDc5MiwianRpIjoibldyTDZDZDFnZlh1SUt4TiIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.971LhrKeondePM_he-QCZ5bK8d767GyL679M0QPHC1Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/pacientes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/pacientes",
+			"id": "4abcac3f-5dc0-4ebd-9a4c-21ff0decac1d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjkwOTMwNzkyLCJleHAiOjE2OTA5MzQzOTIsIm5iZiI6MTY5MDkzMDc5MiwianRpIjoibldyTDZDZDFnZlh1SUt4TiIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.971LhrKeondePM_he-QCZ5bK8d767GyL679M0QPHC1Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"TESTE JSON\",\n    \"cpf\": \"232323232\",\n    \"celular\": \"912345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/pacientes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/pacientes/11",
+			"id": "ad471785-0ae6-4a83-8f33-a5fa72cda386",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjkwOTMwNzkyLCJleHAiOjE2OTA5MzQzOTIsIm5iZiI6MTY5MDkzMDc5MiwianRpIjoibldyTDZDZDFnZlh1SUt4TiIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.971LhrKeondePM_he-QCZ5bK8d767GyL679M0QPHC1Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Paciente Teste\",\n    \"celular\": \"987654321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/pacientes/11",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"pacientes",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

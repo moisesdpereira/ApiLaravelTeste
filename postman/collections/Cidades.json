@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "ad92abfc-50d3-487c-a7e0-b63c69170d8f",
+		"name": "Cidades",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24761159-ad92abfc-50d3-487c-a7e0-b63c69170d8f"
+	},
+	"item": [
+		{
+			"name": "localhost/api/cidades",
+			"id": "7c7be0e5-94e8-432c-a369-7c28e9bb9a50",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/cidades",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"cidades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/cidades/10/medicos",
+			"id": "8d4a01c5-efc7-43ac-a829-2324b0f4715b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/cidades/10/medicos",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"cidades",
+						"10",
+						"medicos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

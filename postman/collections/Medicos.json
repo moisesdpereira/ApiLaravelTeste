@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "6d6dc2bb-f7ea-4a36-81ec-86e54b107fd5",
+		"name": "Medicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24761159-6d6dc2bb-f7ea-4a36-81ec-86e54b107fd5"
+	},
+	"item": [
+		{
+			"name": "localhost/api/medicos/",
+			"id": "7074df43-8439-4625-bab8-cb21c1f79f6b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/medicos/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"medicos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/medicos",
+			"id": "e24a83e7-cef2-4491-b9e0-6b9d09cefd10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjkwOTI2MTI0LCJleHAiOjE2OTA5Mjk3MjQsIm5iZiI6MTY5MDkyNjEyNCwianRpIjoiSVphUlFaQ0JmVU56NFdvRyIsInN1YiI6IjExIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.0mwYLv_WmWCfD0z5x4d-puF0ET-LcqnzKjptkQgbsH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Dr Claudio\",\n    \"especialidade\": \"Clinico geral\",\n    \"cidade_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/medicos",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"medicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/medicos/1/pacientes",
+			"id": "55c2b792-4d81-42bc-8c63-d9f0a52962a8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "paciente_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/api/medicos/1/pacientes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"medicos",
+						"1",
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/medicos/1/pacientes",
+			"id": "6dea6f45-f2a0-4d3c-aef0-58c10ef339ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/medicos/1/pacientes",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"medicos",
+						"1",
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
