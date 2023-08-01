@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::group(['prefix' => 'auth', 'as' => 'auth', 'middleware' => 'apiJwt'], function(){
-    Route::get('/logout', [AuthController::class, 'logout'])->name('.logou');
-    Route::post('/me', [AuthController::class, 'me'])->name('.me');
-    Route::patch('/refresh', [AuthController::class, 'refresh'])->name('.refresh');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('.logou');
+    Route::get('/me', [AuthController::class, 'me'])->name('.me');
+    Route::get('/refresh', [AuthController::class, 'refresh'])->name('.refresh');
 });
 
 Route::group(['prefix' => 'cidades', 'as' => 'cities'], function(){
