@@ -55,7 +55,7 @@ class PatientController extends Controller
             $patient->cell_phone = $request->get('celular');
 
             $patient->save();
-            
+
             return response()->json($patient, 200);
 
         } catch (ModelNotFoundException $e) {
