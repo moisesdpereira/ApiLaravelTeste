@@ -20,12 +20,6 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
 
-//        City::factory(10)->create();
-//
-//        Patient::factory(10)->create();
-//
-//        Doctor::factory(10)->create();
-
         DoctorPatient::factory(10)->create();
 
          User::factory()->create([

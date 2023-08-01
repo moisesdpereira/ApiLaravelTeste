@@ -2,64 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDoctorPatientRequest;
+use App\Models\Doctor;
 use App\Models\DoctorPatient;
+use App\Models\Patient;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class DoctorPatientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function getDoctorPatients($id_medico)
     {
-        //
+        try {
+            $doctor = Doctor::findOrFail($id_medico);
+
+            $patients = $doctor->patients;
+
+            return response()->json($patients, 200);
+
+        }catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Médico não encontrado.'], 404);
+        } catch (\Exception $e) {
+            Log::error($e);
+            return response()->json(['message' => 'Ocorreu um erro ao buscar o médico.'], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function linkDoctorPatient(StoreDoctorPatientRequest $request, $id_medico)
     {
-        //
-    }
+        try {
+            $doctor = Doctor::findOrFail($id_medico);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            $patient = Patient::findOrFail($request->get('paciente_id'));
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(DoctorPatient $doctorPatient)
-    {
-        //
-    }
+            $doctorPatient = new DoctorPatient();
+            $doctorPatient->doctor_id = $doctor->id;
+            $doctorPatient->patient_id = $patient->id;
+            $doctorPatient->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(DoctorPatient $doctorPatient)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DoctorPatient $doctorPatient)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(DoctorPatient $doctorPatient)
-    {
-        //
+            return response()->json([
+                'medico' => $doctor,
+                'paciente' => $patient,
+            ], 200);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['message' => 'Médico ou paciente não encontrado.'], 404);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Ocorreu um erro ao vincular o médico ao paciente.'], 500);
+        }
     }
 }
